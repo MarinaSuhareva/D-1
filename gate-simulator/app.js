@@ -1,6 +1,6 @@
 const fs = require('fs');
 const express = require('express');
-const uuidv4 = require('uuid/v4');
+const uuid4 = require('uuid/v4');
 
 const data = JSON.parse(fs.readFileSync('data.json', 'UTF-8'));
 console.log(data);
@@ -19,7 +19,7 @@ server.post(['/payment', '/credit'], (req, res) => {
   }
 
   res.send({
-    id: uuidv4(),
+    id: uuid4(),
     status: item.status,
   });
 });
