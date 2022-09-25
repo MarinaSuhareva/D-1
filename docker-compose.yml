@@ -13,14 +13,8 @@ services:
 
   node:
     build: ./gate-simulator
-    image: node:8
-    user: node
-    working_dir: /home/node/app
-    volumes:
-      - ./gate-simulator:/home/node/app
     ports:
-      - '9999:9999'
-    command: npm start
+        - '9999:9999'
 
   postgres:
     image: postgres:13-alpine
